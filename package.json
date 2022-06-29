@@ -9,11 +9,13 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "canvas": "^2.9.3",
     "discord-fivem-api": "^1.0.6",
     "discord.js": "^13.8.0",
     "dotenv": "^16.0.1",
     "semver": "^7.3.7",
-    "tsc": "^2.0.4"
+    "tsc": "^2.0.4",
+    "undici": "^5.5.1"
   },
   "devDependencies": {
     "@types/node": "^18.0.0",
