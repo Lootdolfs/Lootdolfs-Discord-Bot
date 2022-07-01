@@ -1,6 +1,6 @@
 import { BaseCommandInteraction, Client, CommandInteraction } from "discord.js";
 import { Command } from "../types/Command";
-import { getPlayersOnline, getMaxPlayers} from "../FiveMApi/Status";
+import { getPlayersOnline, getMaxPlayers, getPlayers} from "../FiveMApi/Status";
 
 
 export const Status: Command = {
@@ -26,9 +26,10 @@ export const Status: Command = {
     //     }
     // ],
     run: async (client: Client, interaction: BaseCommandInteraction) => {
+		console.log(await getPlayers())
 		await interaction.followUp({
             ephemeral: true,
-            content: `Serverstatus: ${await getPlayersOnline()}/${await getMaxPlayers()}`,
+            content: `Serverstatus: ${await getPlayersOnline()}/${await getMaxPlayers()} \n ${await getPlayers()}`,
         });
     }
 };

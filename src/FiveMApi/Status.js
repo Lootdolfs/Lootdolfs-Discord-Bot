@@ -16,3 +16,18 @@ export function getMaxPlayers()
 		return res;
 	});
 };
+
+export function getPlayers()
+{
+	return server.getPlayers().then((data) => {
+		let result  = [];
+		let index = 1;
+		for (let player of data) {
+		  result.push(`${index++}. ${player.name} | ID ${player.id}\n`);
+		}
+		return result;
+	});
+};
+
+
+
